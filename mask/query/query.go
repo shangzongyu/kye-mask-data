@@ -211,7 +211,7 @@ func (d *Data) Run() {
 		for {
 			if d.pools.Running() <= 0 {
 				close(d.channels)
-				_ = d.pools.Release()
+				d.pools.Release()
 				d.done <- true
 				log.Info(fmt.Sprintf("query update fileds count(%v), already mask count(%v), not mask count(%v), already mask but not rellace count(%v),",
 					d.fieldCount, d.maskedCount, d.maskedNotReplaceCount, d.notMaskedCount))
@@ -224,7 +224,7 @@ func (d *Data) Run() {
 }
 
 func (d *Data) Close() {
-	_ = d.pools.Release()
+	d.pools.Release()
 	fmt.Printf("mask query release pools\n")
 	close(d.channels)
 	fmt.Printf("mask query close channel\n")

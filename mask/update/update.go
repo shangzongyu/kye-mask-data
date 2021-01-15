@@ -86,7 +86,7 @@ func (d *Data) Run() {
 		for {
 			log.Error(fmt.Sprintf("update run count(%d)", d.pools.Running()))
 			if d.pools.Running() <= 0 {
-				_ = d.pools.Release()
+				d.pools.Release()
 				d.done <- true
 				break
 			}
@@ -102,7 +102,7 @@ func (d *Data) Done() <-chan bool {
 }
 
 func (d *Data) Close() {
-	_ = d.pools.Release()
+	d.pools.Release()
 	fmt.Printf("mask update release pools\n")
 	fmt.Printf("mask update close db start\n")
 	d.dbs.Range(func(key, value interface{}) bool {

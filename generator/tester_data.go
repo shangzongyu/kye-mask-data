@@ -322,10 +322,6 @@ func NewTestData(info *config.GenerateTestDataFlag) (*TesterData, error) {
 		return nil, errors.New("db names is empty")
 	}
 
-	if info == nil {
-		return nil, errors.New("test data config is nil")
-	}
-
 	if len(dbNames) <= 0 || info.TableCount <= 0 || info.TableDataCount <= 0 || info.PoolCount <= 0 {
 		return nil, errors.New("dbname len <=0 or tableCount<=0 or TableDataCount <= 0 or poolcount <=0")
 	}
