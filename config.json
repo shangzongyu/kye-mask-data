@@ -1,34 +1,34 @@
 {
-    "log_level": "info",
-    "log_file": "",
-    "channel_count": 50000,
-    "query_print_log_count": 10000,
-    "query_pool_count": 10,
-    "update_print_log_count": 10000,
-    "update_pool_count": 1000,
-    "limit_count": 10000,
-    "db_infos": [
-        {
-            "name": "kye_test_0",
-            "tables": [
-                {
-                    "name": "people_0",
-                    "fields": [
-                        "id",
-                        "phone"
-                    ]
-                }
-            ]
-        }
-    ],
-    "redis_info": {
-        "index": 0,
-        "addr": "localhost:6379"
-    },
-    "user_name": "root",
-    "password": "root",
-    "host": "localhost",
-    "port": 3306,
-    "max_open_conns": 2000,
-    "max_idle_conns": 1000
+  "log_level": "info",
+  "log_file": "",
+  "channel_count": 50000,
+  "query_print_log_count": 10000,
+  "query_pool_count": 10,
+  "update_print_log_count": 10000,
+  "update_pool_count": 1000,
+  "limit_count": 10000,
+  "db_infos": [
+      {
+          "name": "kye_test_0",
+          "tables": [
+              {
+                  "name": "people_0",
+                  "fields": [
+                      "id",
+                      "phone"
+                  ]
+              }
+          ]
+      }
+  ],
+  "redis_info": {
+      "index": 0,
+      "addr": "localhost:6379"
+  },
+  "user_name": "root",
+  "password": "SecOMP_2019",
+  "host": "10.121.20.42",
+  "port": 3306,
+  "max_open_conns": 2000,
+  "max_idle_conns": 1000
 }

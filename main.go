@@ -122,7 +122,7 @@ func init() {
 	flag.Float64Var(&generateDBConfigFlag.Percent, "generate-conf-db-percent", 0.5, "generate conf db percent")
 	flag.StringVar(&generateDBConfigFlag.FileName, "generate-conf-file", "config.json", "generate conf file, json format")
 	flag.StringVar(&generateDBConfigFlag.DBFile, "generate-conf-db-file", "dbfile.txt", "generate conf db names file")
-	flag.StringVar(&generateDBConfigFlag.RegexpFile, "generate-conf-regexp-file", "regexp.txt", "generate conf regexp file")
+	flag.StringVar(&generateDBConfigFlag.RegexpFile, "generate-conf-regexp-file", "regex.txt", "generate conf regexp file")
 	flag.StringVar(&generateDBConfigFlag.LogLevel, "generate-conf-log-level", "info", "generate conf log level")
 	flag.StringVar(&generateTestDataConfigFlag.LogFile, "generate-conf-test-log-file", "", "generate conf log file")
 
@@ -148,21 +148,22 @@ func usage() {
 Please Follow The Steps:
 
 step 0 - (generate db config):
-    ./kye-mask -model generate-conf -conf config.json -db-file dbfile.txt -db-regex-file regex.txt\
-    -db-username username -db-password password -db-host host -db-port port \
+    ./kye-mask -model generate-conf -conf config.json -generate-db-file dbfile.txt -generate-conf-regexp-file regex.txt\
+    -generate-conf-db-username username -generate-db-password password -generate-db-host host -generate-db-port port \
     -db-limit-count limit-count -db-percent 0.5
 
     -model generate-conf: generate db config
     -conf: generate config file
     -generate-conf-db-file: database file                             (must)
+    -generate-conf-regexp-file: database file                             (must)
     -generate-conf-db-usename: db username                            (option, default:root)
     -generate-conf-db-password: db password                           (option, default:root)
-    -generate-conf-db-host: db host ip                                (option, default:locahost)
+    -generate-conf-db-host: db host ip                                (option, default:localhost)
     -generate-conf-db-port: db port                                   (option, default:3306)
     -db-limit-count: limit count for generate config    (option, default:1000)
 step 1 - (start process)):
-    ./kye-mask -model process -conf file
-    -model process: start run
+    ./kye-mask -model run -conf file
+    -model run: start run
     -conf: config file
 `)
 }
@@ -171,7 +172,7 @@ func modelProcessFunc() {
 	var err error
 	switch model {
 	case modelRun:
-		log.Println("process ...")
+		log.Println("run ...")
 		err = maskRun()
 	case modelGenerateConfig:
 		log.Println("generate conf ...")
