@@ -1,4 +1,4 @@
-module kye-mask-data
+module mask-data
 
 go 1.15
 

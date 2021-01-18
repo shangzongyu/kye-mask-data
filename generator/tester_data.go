@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"kye-mask-data/common"
-	"kye-mask-data/config"
+	"mask-data/common"
+	"mask-data/config"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/panjf2000/ants"

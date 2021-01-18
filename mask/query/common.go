@@ -3,7 +3,7 @@ package query
 import (
 	"database/sql"
 
-	"kye-mask-data/mask/redis"
+	"mask-data/mask/redis"
 
 	"go.uber.org/zap"
 )

@@ -9,8 +9,8 @@ import (
 	"strings"
 	"sync"
 
-	"kye-mask-data/common"
-	"kye-mask-data/config"
+	"mask-data/common"
+	"mask-data/config"
 
 	_ "github.com/go-sql-driver/mysql"
 )

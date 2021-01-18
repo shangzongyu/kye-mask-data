@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"sync"
 
-	"kye-mask-data/common"
-	"kye-mask-data/config"
-	"kye-mask-data/mask/query"
-	"kye-mask-data/mask/update"
+	"mask-data/common"
+	"mask-data/config"
+	"mask-data/mask/query"
+	"mask-data/mask/update"
 
 	"go.uber.org/zap"
 )

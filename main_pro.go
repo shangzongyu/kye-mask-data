@@ -10,9 +10,9 @@ import (
 	"os/signal"
 	"syscall"
 
-	"kye-mask-data/config"
-	"kye-mask-data/generator"
-	"kye-mask-data/mask"
+	"mask-data/config"
+	"mask-data/generator"
+	"mask-data/mask"
 )
 
 var (

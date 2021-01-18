@@ -9,8 +9,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"kye-mask-data/common"
-	"kye-mask-data/config"
+	"mask-data/common"
+	"mask-data/config"
 
 	"github.com/panjf2000/ants"
 )
