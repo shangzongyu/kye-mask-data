@@ -1,14 +1,14 @@
-# mask-data
+# kye-mask-data
 
-#### 介绍
+## 介绍
 
 主要用脱敏数据。
 
-#### 软件架构
+## 软件架构
 
 软件架构说明
 
-#### MySQL 优化的配置
+## MySQL 优化的配置
 
 ```sql
 show variables like 'max_connections';
@@ -39,7 +39,26 @@ max_connections=2000
 1. 数据库的主键名称必须为 ID，而且必须是 **整数类型**
 2. 这个会直接修改源数据库，因此需要进行备份
 
+## TODO
 
-```
-./kye-mask -model generate-conf -conf config.json -generate-conf-db-file dbfile.txt -generate-conf-regexp-file regex.txt -generate-conf-db-username root -generate-conf-db-password SecOMP_2019 -generate-conf-db-host 10.121.20.42 -generate-conf-db-port 3306
-```
+1. 使用 [[https://github.com/spf13/cobra]] 替代 flag
+2. 有3个功能
+  1. 生成测试数据
+  2. 根据数据库生成配置文件
+  3. 运行
+     1. 直接更新数据库
+     2. 生成配置文件
+
+问题：
+
++ 可否不适用redis，如何保证数据脱敏的正确性，同一个数据对应的脱敏数据是一致的
++ 如何解决 ID 中间有数百万空的数据？这个需要详细解释
+
+自己优化这个项目的过程，并且记录下来。
+
+参数解析：刚开始使用 flag 解析
+查询使用 Limit
+
+
+POSIX-compliant flags ?
+

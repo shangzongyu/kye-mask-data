@@ -54,7 +54,7 @@ type Redis struct {
     Password string `json:"password,omitempty"`
 }
 
-func openConfigFile(filePath string) (*Info, error) {
+func openConfigFile(filePath string) ([]byte, error) {
     if filePath == "" {
         return nil, errors.New("filePath is empty")
     }
@@ -71,19 +71,20 @@ func openConfigFile(filePath string) (*Info, error) {
         return nil, fmt.Errorf("openConfigFileioutil.ReadAll(%s) error(%s)", filePath, err.Error())
     }
 
-    var result Info
-    if err := json.Unmarshal([]byte(byteValue), &result); err != nil {
-        return nil, fmt.Errorf("openConfigFile unmarhal json error(%s)", err.Error())
-    }
-
-    return &result, err
+    return byteValue, nil
 }
 
 // New new config
 func New(filePath string) (*Info, error) {
-    info, err := openConfigFile(filePath)
+    byteValue, err := openConfigFile(filePath)
     if err != nil {
         return nil, err
     }
+
+    var info *Info
+    if err := json.Unmarshal(byteValue, info); err != nil {
+       return nil, fmt.Errorf("openConfigFile unmarhal json error(%s)", err.Error())
+    }
+
     return info, nil
 }

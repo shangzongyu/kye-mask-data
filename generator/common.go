@@ -35,7 +35,7 @@ func configParameterCheck(info *config.GenerateDBFlag) error {
 		return errors.New("conf files is emtpy")
 	}
 
-	if info.FileName == "" {
+	if info.DBFileName == "" {
 		return errors.New("config file is emtpy")
 	}
 

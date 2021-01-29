@@ -8,22 +8,22 @@
   "update_pool_count": 1000,
   "limit_count": 10000,
   "db_infos": [
-      {
-          "name": "kye_test_0",
-          "tables": [
-              {
-                  "name": "people_0",
-                  "fields": [
-                      "id",
-                      "phone"
-                  ]
-              }
+    {
+      "name": "kye_test_0",
+      "tables": [
+        {
+          "name": "people_0",
+          "fields": [
+            "id",
+            "phone"
           ]
-      }
+        }
+      ]
+    }
   ],
   "redis_info": {
-      "index": 0,
-      "addr": "localhost:6379"
+    "index": 0,
+    "addr": "localhost:6379"
   },
   "user_name": "root",
   "password": "SecOMP_2019",

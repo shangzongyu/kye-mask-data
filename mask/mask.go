@@ -23,6 +23,7 @@ type Mask struct {
 func (m *Mask) Run() {
 	m.queryDB.Run()
 	log.Info("query db start...")
+
 	m.updateDB.Run()
 	log.Info("update db start...")
 
